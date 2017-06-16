@@ -5,21 +5,21 @@
   
   <title>MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23） | brightwang.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23）原文：6 Rules of Thumb for MongoDB Schema Design: Part 1 By William Zola, Lead Technical Support Engineer at MongoDB “我有丰富的sql使用经验，但是我是个MongoDB的初学者。我应该如何在Mon">
+  <meta name="description" content="原文：6 Rules of Thumb for MongoDB Schema Design: Part 1 By William Zola, Lead Technical Support Engineer at MongoDB “我有丰富的sql使用经验，但是我是个MongoDB的初学者。我应该如何在MongoDB中针对一对多关系进行建模？”这是我被问及最多的问题之一。 我没法简单的给出答案，因为">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23）">
 <meta property="og:url" content="http://yoursite.com/2017/06/14/hello-world/index.html">
 <meta property="og:site_name" content="brightwang.com">
-<meta property="og:description" content="MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23）原文：6 Rules of Thumb for MongoDB Schema Design: Part 1 By William Zola, Lead Technical Support Engineer at MongoDB “我有丰富的sql使用经验，但是我是个MongoDB的初学者。我应该如何在Mon">
+<meta property="og:description" content="原文：6 Rules of Thumb for MongoDB Schema Design: Part 1 By William Zola, Lead Technical Support Engineer at MongoDB “我有丰富的sql使用经验，但是我是个MongoDB的初学者。我应该如何在MongoDB中针对一对多关系进行建模？”这是我被问及最多的问题之一。 我没法简单的给出答案，因为">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/14570-d1eb77395ba46204.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/14570-16c4bc27b47933f8.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/14570-7dee8ae5d826224f.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/14570-4e434c02f63d7bbf.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/14570-d7daae7efa1a85ae.png">
-<meta property="og:updated_time" content="2017-06-14T10:35:38.000Z">
+<meta property="og:updated_time" content="2017-06-16T01:02:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23）">
-<meta name="twitter:description" content="MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23）原文：6 Rules of Thumb for MongoDB Schema Design: Part 1 By William Zola, Lead Technical Support Engineer at MongoDB “我有丰富的sql使用经验，但是我是个MongoDB的初学者。我应该如何在Mon">
+<meta name="twitter:description" content="原文：6 Rules of Thumb for MongoDB Schema Design: Part 1 By William Zola, Lead Technical Support Engineer at MongoDB “我有丰富的sql使用经验，但是我是个MongoDB的初学者。我应该如何在MongoDB中针对一对多关系进行建模？”这是我被问及最多的问题之一。 我没法简单的给出答案，因为">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/14570-d1eb77395ba46204.png">
   
     <link rel="alternate" href="/atom.xml" title="brightwang.com" type="application/atom+xml">
@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MongoDB数据库设计中6条重要的经验法则，part-1（每日一译：2014-07-23）"><a href="#MongoDB数据库设计中6条重要的经验法则，part-1（每日一译：2014-07-23）" class="headerlink" title="MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23）"></a>MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23）</h1><p>原文：<a href="http://blog.mongodb.org/post/87200945828/6-rules-of-thumb-for-mongodb-schema-design-part-1" target="_blank" rel="external">6 Rules of Thumb for MongoDB Schema Design: Part 1</a></p>
+        <p>原文：<a href="http://blog.mongodb.org/post/87200945828/6-rules-of-thumb-for-mongodb-schema-design-part-1" target="_blank" rel="external">6 Rules of Thumb for MongoDB Schema Design: Part 1</a></p>
 <p><em>By William Zola, Lead Technical Support Engineer at MongoDB</em></p>
 <p>“我有丰富的sql使用经验，但是我是个MongoDB的初学者。我应该如何在MongoDB中针对一对多关系进行建模？”这是我被问及最多的问题之一。</p>
 <p>我没法简单的给出答案，因为这有很多方案去实现。接下来我会教导你如何针对一对多进行建模。</p>
@@ -141,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/14/hello-world/" data-id="cj3wv238c0000eo5bla9smast" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/14/hello-world/" data-id="cj3z5gy3g00021u5b1fg5kx0r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -150,11 +150,15 @@
     
 <nav id="article-nav">
   
-  
-    <a href="/2017/06/14/demo/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">demo</div>
+    <a href="/2017/06/14/demo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          demo
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -190,11 +194,15 @@
       <ul>
         
           <li>
-            <a href="/2017/06/14/hello-world/">MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23）</a>
+            <a href="/2017/06/16/MongoDB数据库设计中6条重要的经验法则，part-2（每日一译：2014-07-24）/">(no title)</a>
           </li>
         
           <li>
             <a href="/2017/06/14/demo/">demo</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/14/hello-world/">MongoDB数据库设计中6条重要的经验法则，part 1（每日一译：2014-07-23）</a>
           </li>
         
       </ul>
